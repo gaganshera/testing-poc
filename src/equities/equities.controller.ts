@@ -34,15 +34,15 @@ export class EquitiesController {
     return this.equitiesService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.equitiesService.findOne(id);
-  }
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.equitiesService.findOne(id);
+  // }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateEquityDto: UpdateEquityDto) {
-    return this.equitiesService.update(id, updateEquityDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateEquityDto: UpdateEquityDto) {
+  //   return this.equitiesService.update(id, updateEquityDto);
+  // }
 
   @Post('/buy/:equityId')
   async buyEquity(
@@ -100,7 +100,7 @@ export class EquitiesController {
         message: 'SUCCESS',
       });
     } catch (error) {
-      console.log(error);
+      console.log('Error in buyEquity', error);
       return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
         statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
         message: error.message,

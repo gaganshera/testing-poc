@@ -4,9 +4,9 @@ import { UpdateEquityDto } from './dto/update-equity.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Equity } from '../entities/equity.entity';
-import { User } from 'src/entities/user.entity';
+import { User } from '../entities/user.entity';
 import { BuyEquityDto } from './dto/buy-equity.dto';
-import { UserEquities } from 'src/entities/user_equity.entity';
+import { UserEquities } from '../entities/user_equity.entity';
 
 @Injectable()
 export class EquitiesService {
