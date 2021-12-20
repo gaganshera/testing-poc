@@ -1,3 +1,33 @@
+## Installation
+
+```bash
+$ npm install
+```
+
+## Running the app
+
+```bash
+$ npm run start
+# watch mode
+$ npm run start:dev
+```
+
+## Test
+
+```bash
+# unit tests
+$ npm run test
+```
+<!-- # e2e tests
+# $ npm run test:e2e -->
+```bash
+# test coverage
+$ npm run test:cov
+```
+Coverage report:
+`/coverage/lcov-report/index.html`
+### APIs
+
 - Create user
 ```
 curl --location --request POST 'localhost:3000/users' \
