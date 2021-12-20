@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { CreateEquityDto } from './dto/create-equity.dto';
-import { UpdateEquityDto } from './dto/update-equity.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Equity } from '../entities/equity.entity';
@@ -34,10 +33,6 @@ export class EquitiesService {
 
   findOne(id: string) {
     return this.equitiesRepository.findOne(id);
-  }
-
-  update(id: string, updateEquityDto: UpdateEquityDto) {
-    return this.equitiesRepository.update({ id }, updateEquityDto);
   }
 
   findUserEquity(userId: string, equityId: string) {

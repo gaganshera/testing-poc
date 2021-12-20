@@ -3,16 +3,13 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
-  Delete,
   HttpStatus,
   Res,
 } from '@nestjs/common';
 import { Response } from 'express';
 import { EquitiesService } from './equities.service';
 import { CreateEquityDto } from './dto/create-equity.dto';
-import { UpdateEquityDto } from './dto/update-equity.dto';
 import { BuyEquityDto } from './dto/buy-equity.dto';
 import { CommonFunctions as cf } from '../common/common-functions';
 import { UsersService } from '../users/users.service';

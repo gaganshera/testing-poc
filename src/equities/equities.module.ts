@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { Module } from '@nestjs/common';
 import { EquitiesService } from './equities.service';
 import { EquitiesController } from './equities.controller';
