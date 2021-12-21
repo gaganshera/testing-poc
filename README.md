@@ -1,6 +1,7 @@
 ## Clone repository
 ```bash
 git clone https://github.com/gaganshera/testing-poc.git
+cd testing-poc
 ```
 
 ## Prerequitites for running the app
