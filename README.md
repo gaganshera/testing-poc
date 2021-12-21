@@ -1,3 +1,8 @@
+## Prerequitites for running the app
+- Nodejs >= 10
+- npm (bundles with nodejs)
+- MySQL
+
 ## Installation
 
 ```bash
