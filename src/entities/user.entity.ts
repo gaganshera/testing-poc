@@ -11,7 +11,4 @@ export class User {
 
   @Column({ default: 0 })
   funds: number;
-
-  @OneToMany(() => UserEquities, (userEquity) => userEquity.user)
-  userEquities: Promise<UserEquities[]>;
 }

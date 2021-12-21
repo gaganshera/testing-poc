@@ -20,8 +20,4 @@ export class UserEquities {
 
   @Column()
   units_bought: number;
-
-  @ManyToOne(() => User, (user) => user.userEquities)
-  @JoinColumn({ name: 'user_id', referencedColumnName: 'id' })
-  user: Promise<User>;
 }

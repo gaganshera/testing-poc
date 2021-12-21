@@ -14,21 +14,30 @@ $ npm run start:dev
 
 ## Test
 
+### Unit tests + narrow integration tests
+- Dependencies: sqlite3 installed on machine
 ```bash
-# unit tests + integration tests
+# unit tests + narrow integration tests
 $ npm run test
 ```
+
+### E2E broad integration tests
+- Dependencies: mysql installed on machine
+- Change mysql config in `test-broad-integration/equity.e2e-spec.ts` and `test-broad-integration/users.e2e-spec.ts`
 ```bash
-# e2e tests
+# e2e broad integration tests
 $ npm run test:e2e
 ```
+
+### Test Coverage Report
 ```bash
 # test coverage
 $ npm run test:cov
 ```
-Coverage report:
-`/coverage/lcov-report/index.html`
-### APIs
+Coverage report html path: `/coverage/lcov-report/index.html`
+![coverage](./coverage.png)
+
+## APIs
 
 - Create user
 ```
