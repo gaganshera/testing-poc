@@ -15,7 +15,7 @@ $ npm run start:dev
 ## Test
 
 ```bash
-# unit tests
+# unit tests + integration tests
 $ npm run test
 ```
 ```bash
