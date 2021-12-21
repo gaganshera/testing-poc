@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import { Test, TestingModule } from '@nestjs/testing';
 import { Equity } from '../entities/equity.entity';
 import { Repository } from 'typeorm';

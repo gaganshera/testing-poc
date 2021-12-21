@@ -8,8 +8,8 @@ import { Repository } from 'typeorm';
 import { User } from '../src/entities/user.entity';
 import { UserEquities } from '../src/entities/user_equity.entity';
 import { Equity } from '../src/entities/equity.entity';
-import { CreateUserDto } from '../src/users/dto/create-user.dto';
 import { CreateEquityDto } from '../src/equities/dto/create-equity.dto';
+import { DateTime } from 'luxon';
 
 describe('Users Integration', () => {
   let app: INestApplication;
@@ -107,6 +107,10 @@ describe('Users Integration', () => {
     await usersEquityRepository.clear();
     await equityRepository.clear();
     await userRepository.clear();
+
+    jest
+      .spyOn(DateTime, 'now')
+      .mockImplementation(() => DateTime.fromISO('2021-12-22T16:30:00'));
   });
   afterAll(async () => {
     await app.close();
@@ -150,6 +154,16 @@ describe('Users Integration', () => {
   it('/buy/:equityId (POST)', async () => {
     await request(app.getHttpServer())
       .post(`/equities/buy/${equities[0].id}`)
+      .send({ units: 2, user_id: '411f2bdd-b96a-4aee-81c5-cfe6e2cf4fd6' })
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .expect({ statusCode: 200, message: 'SUCCESS' });
+  });
+
+  it('/buy/:equityId (POST) user has equity', async () => {
+    await request(app.getHttpServer())
+      .post(`/equities/buy/${equities[1].id}`)
       .send({ units: 2, user_id: '411f2bdd-b96a-4aee-81c5-cfe6e2cf4fd6' })
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)

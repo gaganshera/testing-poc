@@ -1,11 +1,10 @@
-import * as dayjs from 'dayjs';
-
+import { DateTime } from 'luxon';
 export class CommonFunctions {
   public static isBuySellTime(): boolean {
-    const dayOfWeek: number = dayjs().day();
-    const hourOfDay: number = dayjs().hour();
-    return [1, 2, 3, 4, 5].includes(dayOfWeek); //&&
-    // [9, 10, 11, 12, 13, 14, 15, 16].includes(hourOfDay)
-    //TODO
+    const dayOfWeek: number = DateTime.now().weekday;
+    const hourOfDay: number = DateTime.now().hour;
+    return (
+      [1, 2, 3, 4, 5].includes(dayOfWeek) && hourOfDay >= 9 && hourOfDay <= 17
+    );
   }
 }

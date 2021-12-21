@@ -7,6 +7,7 @@ import { Equity } from '../entities/equity.entity';
 import { User } from '../entities/user.entity';
 import { UsersService } from '../users/users.service';
 import { UserEquities } from '../entities/user_equity.entity';
+import { DateTime } from 'luxon';
 
 describe('EquitiesController', () => {
   let equitiesController: EquitiesController;
@@ -84,6 +85,10 @@ describe('EquitiesController', () => {
     equitiesService = module.get<EquitiesService>(EquitiesService);
 
     usersService = module.get<UsersService>(UsersService);
+
+    jest
+      .spyOn(DateTime, 'now')
+      .mockImplementation(() => DateTime.fromISO('2021-12-22T16:30:00'));
   });
 
   it('Save new equity', () => {
