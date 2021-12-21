@@ -1,3 +1,8 @@
+## Clone repository
+```bash
+git clone https://github.com/gaganshera/testing-poc.git
+```
+
 ## Prerequitites for running the app
 - Nodejs >= 10
 - npm (bundles with nodejs)
