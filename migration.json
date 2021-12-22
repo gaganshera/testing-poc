@@ -7,5 +7,6 @@
   "database": "traders",
   "entities": ["dist/**/*.entity{.ts,.js}"],
   "synchronize": false,
-  "logging": true
+  "logging": true,
+  "migrations": ["dist/migrations/**/*.js"]
 }
