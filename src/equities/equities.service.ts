@@ -103,8 +103,4 @@ export class EquitiesService {
       throw new Error('SELL_ERROR');
     }
   }
-
-  // remove(id: number) {
-  //   return `This action removes a #${id} equity`;
-  // }
 }

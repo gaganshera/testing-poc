@@ -152,9 +152,4 @@ export class EquitiesController {
       });
     }
   }
-
-  // @Delete(':id')
-  // remove(@Param('id') id: string) {
-  //   return this.equitiesService.remove(+id);
-  // }
 }
