@@ -9,6 +9,7 @@ import { User } from '../src/entities/user.entity';
 import { UserEquities } from '../src/entities/user_equity.entity';
 import { Equity } from '../src/entities/equity.entity';
 import { CreateUserDto } from '../src/users/dto/create-user.dto';
+import { Config as config } from './config';
 
 describe('Users Integration', () => {
   let app: INestApplication;
@@ -39,11 +40,11 @@ describe('Users Integration', () => {
         EquitiesModule,
         TypeOrmModule.forRoot({
           type: 'mysql',
-          host: 'localhost',
-          port: 3306,
-          username: 'user',
-          password: 'Zainwaw@123',
-          database: 'traders-2',
+          host: config.host,
+          port: config.port,
+          username: config.username,
+          password: config.password,
+          database: config.database,
           entities: [User, UserEquities, Equity],
           synchronize: true,
           logging: true,

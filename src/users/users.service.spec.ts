@@ -39,19 +39,16 @@ describe('UsersService', () => {
 
   it('users create', () => {
     userService.create(user);
-    // console.log('resJsonMock.mock.calls', resJsonMock.mock.calls.length);
     expect(userRepository.save).toHaveBeenCalled();
   });
 
   it('users findOne', () => {
     userService.findOne(user.id);
-    // console.log('resJsonMock.mock.calls', resJsonMock.mock.calls.length);
     expect(userRepository.findOne).toHaveBeenCalled();
   });
 
   it('users update', () => {
     userService.update(user.id, user);
-    // console.log('resJsonMock.mock.calls', resJsonMock.mock.calls.length);
     expect(userRepository.update).toHaveBeenCalled();
   });
 });

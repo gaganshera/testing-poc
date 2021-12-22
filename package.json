@@ -19,7 +19,7 @@
     "test:cov": "jest --coverage --runInBand",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test-broad-integration/jest-e2e.json --runInBand",
-    "typeorm": "./node_modules/typeorm/cli.js --config migration.json",
+    "typeorm": "./node_modules/typeorm/cli.js --config ormconfig.json",
     "migration:run": "npm run build && npm run typeorm -- migration:run"
   },
   "dependencies": {

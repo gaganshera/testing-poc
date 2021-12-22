@@ -15,6 +15,14 @@ cd testing-poc
 $ npm install
 ```
 
+## MySQL configurations
+- Create a database named `traders` in your MySQL server
+- Modify MySQL username, password, host, etc in `ormconfig.json`
+- Run migrations
+```bash
+$ npm run migration:run
+```
+
 ## Running the app
 
 ```bash
@@ -35,8 +43,9 @@ $ npm run test
 ```
 
 ### E2E broad integration tests
-- Dependencies: mysql installed on machine
-- Change mysql config in `test-broad-integration/equity.e2e-spec.ts` and `test-broad-integration/users.e2e-spec.ts`
+- Dependencies: MySQL installed on machine
+- Create a database named `traders-2` in your MySQL server
+- Change MySQL config in `test-broad-integration/config.ts`
 ```bash
 # e2e broad integration tests
 $ npm run test:e2e
