@@ -1,4 +1,5 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
+/* istanbul ignore file */
 
 export class Migrations1640164084953 implements MigrationInterface {
   name = 'Migrations1640164084953';
